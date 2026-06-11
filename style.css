@@ -285,11 +285,32 @@ body.modal-open {
 @media screen and (max-width: 767px) {
   
   /* ─── HEADER ─── */
+  /* =======================================================
+   💻 LAPTOP LAYOUT (Your original code stays as default)
+   ======================================================= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Or your preferred desktop styling */
+  /* ... everything else you sent me ... */
+}
+
+
+/* =======================================================
+   📱 PHONE OVERRIDES (This catches your Infinix at 360px)
+   ======================================================= */
+@media screen and (max-width: 767px) {
+  
   header {
-    flex-direction: column;    /* Stacks logo and text vertically */
+    flex-direction: column; 
     gap: 10px;
-    padding: 15px;
   }
+
+  .popup, #friendPopup {
+    width: 90% !important; 
+  }
+}
+
 
   header img {
     width: 60px;               /* Shrinks the logo for smaller screens */
