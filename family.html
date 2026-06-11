@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My World - Family</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+<h1>Family &#128106</h1>
+</header>
+<nav>
+<a href="index.html">Home</a>
+<a href="education.html">Education</a>
+<a href="family.html">Family</a>
+<a href="friends.html">Friends</a>
+<a href="love.html">Love of My Life</a>
+<a href="memories.html">Memories</a>
+<a href="hobby.html">Hobby</a>
+</nav>
+<main>
+<a href="familyphoto.html">
+<img src="family/family.jpg" alt="family" width ="50%">
+</a>
+<br>
+<em>Mi familia! Click to see more!</em>
+<h2>Family Tree</h2>
+<sub><i><p>Click the image to know more!</p></i></sub>
+<table class="family-table" cellpadding="10" cellspacing="0" align="center" style="width: 100%; table-layout: fixed;">
+<tr>
+<td></td>
+<td><img src="family/ayah.jpg" alt="Dad" width ="70%" class="family-image" onclick="showPopup('<ul><li>Dad: Al Tabree\n</li><br><li> Occupation: Clerk\n</li><br><li> Education: UiTM\n</li><br><li> Birthdate: 1976-05-29</li>')">
+<br>
+<em>My dad!</em> &#129491
+</td>
+<td><img src="family/mak.jpg" alt="Mom" width ="70%" class="family-image" onclick="showPopup('<ul><li>Mom: Jun\n</li><br><li> Occupation: Teacher\n</li><br><li> Education: USM\n</li><br><li> Birthdate: 1976-06-10</li>')">
+<br>
+<em>My mom!</em> &#128117
+</td>
+</tr>
+<tr>
+<td><img src="family/along.jpg" alt="Sister" width ="70%" class="family-image" onclick="showPopup('<ul><li>Sister: Najwa\n</li><br><li> Occupation: Content Creator\n </li><br><li>Education: UPTM\n</li><br><li> Birthdate: 2002-03-12</li>')">
+<br>
+<em>My sister!</em> &#128105
+</td>
+<td><img src="family/me.jpeg" alt="Me" width ="70%" class="family-image" onclick="showPopup('<ul><li>Me: Batrisyia\n</li><br><li> Occupation: Student\n</li><br><li> Education: UiTM\n</li><br><li> Birthdate: 2006-09-28</li>')">
+<br>
+<em>It's me!</em> &#128103
+</td>
+<td><img src="family/adik.jpg" alt="Brother" width ="70%" class="family-image" onclick="showPopup('<ul><li>Brother: Nadhif\n</li><br><li> Occupation: Student\n</li><br><li> Education: SMKL\n</li><br><li> Birthdate: 2011-10-24</li>')">
+<br>
+<em>My brother!</em> &#128102
+</td>
+<td><img src="family/baby.jpg" alt="Baby" width ="70%" class="family-image" onclick="showPopup('<ul><li>Baby: Baby\n</li><br><li> Occupation: Being cute\n</li><br><li> Education: University of Cats\n</li><br><li> Birthdate: 2020-12-31</li>')">
+<br>
+<em>My baby!</em> &#128049
+</td>
+</tr>
+</table>
+<div class="popup" id="popup" style="display:none;">
+<p id="popup-text"></p>
+<button onclick="hidePopup()">Close</button>
+</div>
+<script>
+function hidePopup() {document.getElementById("popup").style.display = "none";}
+function showPopup(content) {document.getElementById("popup").style.display = "block";document.getElementById("popup-text").innerHTML = content;}
+</script>
+</main>
+</body>
+</html>

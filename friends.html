@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My World - Friends</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+<h1>Friends &#128133</h1>
+</header>
+<nav>
+<a href="index.html">Home</a>
+<a href="education.html">Education</a>
+<a href="family.html">Family</a>
+<a href="friends.html">Friends</a>
+<a href="love.html">Love of My Life</a>
+<a href="memories.html">Memories</a>
+<a href="hobby.html">Hobby</a>
+</nav>
+<main>
+<h2>High School Friends</h2>
+<table cellpadding="10" cellspacing="0" align="center" style="width: 100%; table-layout: fixed;">
+<tr>
+<td><img src="friends/highschool3.jpeg" alt="HS Friend 1" width="50%" style="cursor:pointer;" onclick="showFriend('High School Friend: Hannah', 'hannah.html', this)">
+</td>
+<td><img src="friends/highschool1.jpeg" alt="HS Friend 2" width="50%" style="cursor:pointer;" onclick="showFriend('High School Friend: Yani', 'yani.html', this)">
+</td>
+<td><img src="friends/highschool2.jpeg" alt="HS Friend 3" width="50%" style="cursor:pointer;" onclick="showFriend('High School Friend: Arinah', 'arinah.html', this)">
+</td>
+</tr>
+</table>
+
+<h2>University Friends</h2>
+<table cellpadding="10" cellspacing="0" align="center" style="width: 100%; table-layout: fixed;">
+<tr>
+<td>
+<img src="friends/ain.jpeg" alt="University Friend 1" width="50%" style="cursor:pointer;" onclick="showFriend('University Friend: Ain', 'ain.html', this)">
+</td>
+<td>
+<img src="friends/aiza.jpeg" alt="University Friend 2" width="50%" style="cursor:pointer;" onclick="showFriend('University Friend: Aiza', 'aiza.html', this)">
+</td>
+<td>
+<img src="friends/rin.jpeg" alt="University Friend 3" width="50%" style="cursor:pointer;" onclick="showFriend('University Friend: Rin', 'rin.html', this)">
+</td>
+</tr>
+<br>
+<tr>
+<td>
+<img src="friends/auny.jpeg" alt="University Friend 4" width="50%" style="cursor:pointer;" onclick="showFriend('University Friend: Auny', 'auny.html', this)">
+</td>
+<td>
+<img src="friends/mira.jpeg" alt="University Friend 5" width="50%" style="cursor:pointer;" onclick="showFriend('University Friend: Mira', 'mira.html', this)">
+</td>
+<td>
+<img src="friends/ami.jpeg" alt="University Friend 6" width="50%" style="cursor:pointer;" onclick="showFriend('University Friend: Ami', 'ami.html', this)">
+</td>
+</tr>
+</table>
+<div id="friendPopup" style="display:none; border:1px solid black; padding:30px; position:absolute; background:#E6D2B8;">
+  <p id="friendInfo"></p>
+  <button id="viewMoreBtn">View More</button>
+  <button onclick="closePopup()">Close</button>
+</div>
+
+<script>
+const popup = document.getElementById('friendPopup');
+const friendInfo = document.getElementById('friendInfo');
+const viewMoreBtn = document.getElementById('viewMoreBtn');
+
+let selectedFriendPage = '';
+
+function showFriend(friendName, friendPage, imgElement) {
+const rect = imgElement.getBoundingClientRect();
+
+  
+popup.style.top = (rect.top + window.scrollY) + 'px';
+popup.style.left = (rect.left + window.scrollX) + 'px';
+
+popup.style.width = '200px';
+popup.style.padding = '8px'; 
+popup.style.backgroundColor = '#E6D2B8'; 
+popup.style.border = '1px solid black';
+popup.style.borderRadius = '8px';
+popup.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+
+  friendInfo.textContent = friendName;
+  selectedFriendPage = friendPage;
+  viewMoreBtn.onclick = function() {
+    window.location.href = selectedFriendPage;
+  };
+  popup.style.display = 'block';
+}
+function closePopup() {
+  popup.style.display = 'none';
+}
+</script>
+</main>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My World - Hobby</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+<h1>Hobby & Interest &#128374</h1>
+</header>
+<nav>
+<a href="index.html">Home</a>
+<a href="education.html">Education</a>
+<a href="family.html">Family</a>
+<a href="friends.html">Friends</a>
+<a href="love.html">Love of My Life</a>
+<a href="memories.html">Memories</a>
+<a href="hobby.html">Hobby</a>
+</nav>
+<main>
+<h2>Hobby and Interest !</h2>
+<p>Click for better view</p>
+<br>
+<h3>Hobby</h3>
+<table cellpadding="10" cellspacing="0" align="center" style="width: 100%; table-layout: fixed;">
+<tr>
+<td><img src="memory/hobby/hobby1.jpeg" alt="Hobby 1" width="50%" <br><p>Building Lego</p></td>
+<td><img src="memory/hobby/hobby2.jpeg" alt="Hobby 2" width="50%" <br><p>Selling cookie I bake</p></td>
+<td><img src="memory/hobby/hobby3.jpeg" alt="Hobby 3" width="50%" <br><p>Drawing</p></td>
+</tr>
+</table>
+<h3>Cooking and Baking</h3>
+<table cellpadding="10" cellspacing="0" align="center" style="width: 100%; table-layout: fixed;">
+<tr>
+<td><img src="memory/bc/baking1.jpeg" alt="Baking 1" width="50%" <br><p>Baking cake</p></td>
+<td><img src="memory/bc/cook2.jpeg" alt="Cooking 1" width="50%" <br><p>Cooking</p></td>
+<td><img src="memory/bc/cook3.jpeg" alt="Cooking 2" width="50%" <br><p>Making ketupat</p></td>
+</tr>
+</table>
+<h3>Books</h3>
+<table cellpadding="10" cellspacing="0" align="center" style="width: 100%; table-layout: fixed;">
+<tr>
+<td><img src="memory/book/book2.jpeg" alt="Book 1" width="50%" <br><p>Reading</p></td>
+<td><img src="memory/book/book3.jpeg" alt="Book 2" width="50%" <br><p>Visiting bookstores</p></td>
+<td><img src="memory/book/book4.jpeg" alt="Book 3" width="50%" <br><p>Book haul</p></td>
+</tr>
+</table>
+<h3>Interest</h3>
+<table cellpadding="10" cellspacing="0" align="center" style="width: 100%; table-layout: fixed;">
+<tr>
+<td><img src="memory/in/interest1.jpeg" alt="Family Photo 9" width="50%" <br><p>Visiting floral market</p></td>
+<td><img src="memory/in/interest2.jpeg" alt="Family Photo 10" width="50%" <br><p>Buying flowers</p></td>
+<td><img src="memory/in/interest3.jpeg" alt="Family Photo 11" width="50%" <br><p>Playing scrabble</p></td>
+</tr>
+</table>
+<style>
+/* Prevent layout shift when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+/* Overlay modal style */
+#imgModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.85);
+
+  z-index: 9999;
+
+  justify-content: center;
+  align-items: center;
+}
+
+#modalImg {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+table img {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+table img:hover {
+  transform: scale(1.05);
+}
+</style>
+</main>
+<div id="imgModal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img id="modalImg" src="your-image.jpg" alt="Modal Image"/>
+</div>
+
+<script>
+/* MODAL */
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close");
+
+/* CLICK IMAGE */
+document.querySelectorAll("table img").forEach((img) => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+  });
+});
+
+/* CLOSE BUTTON */
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+};
+
+/* CLICK OUTSIDE */
+modal.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
+</script>
+
+</body>
+</html>

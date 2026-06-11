@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My World - Gallery</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+<h1>Memories &#128248</h1>
+</header>
+<nav>
+<a href="index.html">Home</a>
+<a href="education.html">Education</a>
+<a href="family.html">Family</a>
+<a href="friends.html">Friends</a>
+<a href="love.html">Love of My Life</a>
+<a href="memories.html">Memories</a>
+<a href="hobby.html">Hobby</a>
+</nav>
+<main>
+<center>
+<h2>MEMORIES WALL</h2>
+<p>A wall that stores everything</p>
+<div class="category">
+<h3>High School</h3>
+<div class="main-photo">
+<img src="memory/hs/hs1.jpeg" alt="HS 1" width="20%">
+<p class="toggle-caption" onclick="togglePhotos('highschool')">High School &#9660;</p>
+</div>
+<div class="additional-photos" id="highschool" style="display: none;">
+<img src="memory/hs/hs2.jpeg" alt="HS 2" width="20%">
+<img src="memory/hs/hs3.jpeg" alt="HS 3" width="20%">
+<img src="memory/hs/hs4.jpeg" alt="HS 4" width="20%">
+</div>
+</div>
+<div class="category">
+<h3>Friends</h3>
+<div class="main-photo">
+<img src="memory/friends/friends1.jpeg" alt="Friends 1" width="20%">
+<p class="toggle-caption" onclick="togglePhotos('friends')">Friends &#9660;</p>
+</div>
+<div class="additional-photos" id="friends" style="display: none;">
+<img src="memory/friends/friends2.jpeg" alt="Friends 2" width="20%">
+<img src="memory/friends/friends3.jpeg" alt="Friends 3" width="20%">
+</div>
+</div>
+<div class="category">
+<h3>Study</h3>
+<div class="main-photo">
+<img src="memory/study/study1.jpeg" alt="Study 1" width="20%">
+<p class="toggle-caption" onclick="togglePhotos('study')">Study &#9660;</p>
+</div>
+<div class="additional-photos" id="study" style="display: none;">
+<img src="memory/study/study3.jpeg" alt="Study 2" width="20%">
+<img src="memory/study/study4.jpeg" alt="Study 3" width="20%">
+<img src="memory/study/work3.jpeg" alt="Study 5" width="20%">
+</div>
+</div>
+</center>
+</main>
+<div id="imgModal">
+<span class="close" onclick="closeModal()">&times;</span>
+<img id="modalImg" src="your-image.jpg" alt="Modal Image"/>
+</div>
+<script>
+/* MODAL */
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close");
+
+/* CLICK IMAGE */
+document.querySelectorAll("table img").forEach((img) => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+  });
+});
+
+/* CLOSE BUTTON */
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+};
+
+/* CLICK OUTSIDE */
+modal.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
+function togglePhotos(categoryId) {
+  const container = document.getElementById(categoryId);
+  if (container.style.display === "none") {
+    container.style.display = "block";
+  } else {
+    container.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

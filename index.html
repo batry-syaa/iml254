@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> HOME </title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<img src="aboutme/logo.png" alt="Logo" width="100%" height="100%" >
+<h1>Bienvenida to my world!</h1>
+</header>
+<nav>
+<a href="index.html">Home</a>
+<a href="education.html">Education</a>
+<a href="family.html">Family</a>
+<a href="friends.html">Friends</a>
+<a href="love.html">Love of My Life</a>
+<a href="memories.html">Memories</a>
+<a href="hobby.html">Hobby</a>
+</nav>
+<main>
+<h2>About Me</h2>
+<b><p>My name is Batrisyia Nasuha. I was born and grow up in Kluang, Johor. I was the middle child.</p></b>
+<img src="aboutme/me.png" alt="get to know me" width="50%" height="50%" >
+<i><figcaption>Biodata about me!</figcaption></i>
+<p>for any inquiries:</p> 
+<a href="mailto:isya2809@gmail.com">Mail me!</a>
+<br>
+<a href ="https://wa.link/phgvz6"> Whatsapp any question!</a>
+<br><br>
+<h2>Here is short introduction video about my life!</h2>
+<video width="600" height="400" controls>
+<source src="aboutme/intro.mp4" type="video/mp4">
+<source src="aboutme/intro.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+<br><br>
+<h3>Batrisyia's Timeline</h3>
+<div class="slider">
+<div class="slide active">
+<img src="aboutme/babyme.jpg" alt="Baby Batrisyia" width="100%">
+</div>
+<div class="slide">
+<img src="aboutme/four.jpg" alt="4 years old Batrisyia" width="100%">
+</div>
+<div class="slide">
+<img src="aboutme/thirteen.jpg" alt="13 years old Batrisyia" width="100%">
+</div>
+<div style="text-align: center;">
+<button onclick="prevSlide()">Prev</button>
+<button onclick="nextSlide()">Next</button>
+</div>
+</div>
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+function showSlide(index) {slides.forEach((slide, i) => {slide.classList.toggle('active', i === index);});}
+function prevSlide() {currentSlide = (currentSlide - 1 + slides.length) % slides.length;showSlide(currentSlide);}
+function nextSlide() {currentSlide = (currentSlide + 1) % slides.length;showSlide(currentSlide);}
+</script>
+</main>
+</body>
+</html>

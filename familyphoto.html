@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Family Photos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Family Photos</h1>
+</header>
+<nav>
+<a href="family.html">Return</a>
+</nav>
+<main>
+<h2>Family Photos</h2>
+<audio autoplay>
+  <source src="memory.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<div class="slideshow-container">
+<div class="mySlides fade">
+<div class="numbertext">1 / 9</div>
+<img src="family/photo1.jpg" style="width:50%">
+<div class="text">RAYA 2025</div>
+</div>
+<div class="mySlides fade">
+<div class="numbertext">2 / 9</div>
+<img src="family/photo2.jpg" style="width:50%">
+<div class="text">KIDS 1</div>
+</div>
+<div class="mySlides fade">
+<div class="numbertext">3 / 9</div>
+<img src="family/photo3.jpg" style="width:50%">
+<div class="text">RAYA 2013</div>
+</div>
+<div class="mySlides fade">
+<div class="numbertext">4 / 9</div>
+<img src="family/photo5.jpg" style="width:50%">
+<div class="text">KIDS 2</div>
+</div>
+<div class="mySlides fade">
+<div class="numbertext">5 / 9</div>
+<img src="family/photo6.jpg" style="width:50%">
+<div class="text">KIDS 3</div>
+</div>
+<div class="mySlides fade">
+<div class="numbertext">6 / 9</div>
+<img src="family/photo8.jpeg" style="width:50%">
+<div class="text">TEENS 1</div>
+</div>
+<div class="mySlides fade">
+<div class="numbertext">7 / 9</div>
+<img src="family/photo9.jpeg" style="width:50%">
+<div class="text">TEENS 2</div>
+</div>
+<div class="mySlides fade">
+<div class="numbertext">8 / 9</div>
+<img src="family/photo10.jpeg" style="width:50%">
+<div class="text">FAMILY TIME</div>
+</div>
+<div class="mySlides fade">
+<div class="numbertext">9 / 9</div>
+<img src="family/photo12.jpeg" style="width:50%">
+<div class="text">CAT</div>
+</div>
+<br><br><br>
+
+<h2>Gallery style</h2>
+<p>Click for better view</p>
+<table cellpadding="10" cellspacing="0" align="center" style="width: 100%; table-layout: fixed;">
+<tr>
+<td><img src="family/photo1.jpg" alt="Family Photo 1" width="100%"></td>
+<td><img src="family/photo2.jpg" alt="Family Photo 2" width="100%"></td>
+<td><img src="family/photo3.jpg" alt="Family Photo 3" width="100%"></td>
+</tr>
+<tr>
+<td><img src="family/photo5.jpg" alt="Family Photo 5" width="100%"></td>
+<td><img src="family/photo6.jpg" alt="Family Photo 6" width="100%"></td>
+<td><img src="family/photo8.jpeg" alt="Family Photo 8" width="100%"></td>
+</tr>
+<tr>
+<td><img src="family/photo9.jpeg" alt="Family Photo 9" width="100%"></td>
+<td><img src="family/photo10.jpeg" alt="Family Photo 10" width="100%"></td>
+<td><img src="family/photo12.jpeg" alt="Family Photo 12" width="90%"></td>
+</tr>
+</table>
+
+<style>
+/* Prevent layout shift when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+/* Overlay modal style */
+#imgModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.85);
+
+  z-index: 9999;
+
+  justify-content: center;
+  align-items: center;
+}
+
+#modalImg {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+table img {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+table img:hover {
+  transform: scale(1.05);
+}
+</style>
+</main>
+<div id="imgModal">
+<span class="close" onclick="closeModal()">&times;</span>
+<img id="modalImg" src="your-image.jpg" alt="Modal Image"/>
+</div>
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1;}    
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  if (dots[slideIndex-1]) {
+    dots[slideIndex-1].className += " active";
+  }
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+
+/* MODAL */
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close");
+
+/* CLICK IMAGE */
+document.querySelectorAll("table img").forEach((img) => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+  });
+});
+
+/* CLOSE BUTTON */
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+};
+
+/* CLICK OUTSIDE */
+modal.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
+</script>
+
+</body>
+</html>
